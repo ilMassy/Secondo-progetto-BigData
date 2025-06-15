@@ -41,7 +41,7 @@ def main(input_path, output_path):
                       ) \
                       .orderBy("make_name", "model_name")
 
-    # Stampa prime 10 righe (ordinate
+    # Stampa prime 10 righe (ordinate)
     result_df.show(10, truncate=False)
 
     # Salva output come CSV
