@@ -20,7 +20,7 @@ def main(input_path, output_path):
             sort_array(collect_set(col("year"))).alias("years_sorted")
         )
 
-    # Trasforma lista anni in stringa [year1,year2,...]
+    # Trasforma lista anni in stringa
     from pyspark.sql.functions import udf
     from pyspark.sql.types import StringType
 
@@ -41,10 +41,10 @@ def main(input_path, output_path):
                       ) \
                       .orderBy("make_name", "model_name")
 
-    # Stampa prime 10 righe (ordinato)
+    # Stampa prime 10 righe (ordinate
     result_df.show(10, truncate=False)
 
-    # Salva output come CSV (più leggibile) o JSON
+    # Salva output come CSV
     result_df.write.mode("overwrite").option("header", "true").csv(output_path)
 
     spark.stop()

@@ -5,7 +5,7 @@ spark = SparkSession.builder \
     .enableHiveSupport() \
     .getOrCreate()
 
-# Esegui tutto in SQL, nessun DataFrame
+# Esegui tutto in SQL senza creazione di dataframe
 spark.sql("""
 WITH banded AS (
   SELECT 
